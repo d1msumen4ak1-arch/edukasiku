@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edukasiku - Teknologi Digital</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f9; color: #333; }
+    header { background: #2c3e50; color: white; padding: 10px 20px; text-align: center; }
+    nav a { margin: 0 10px; color: white; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    section { margin-top: 20px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 5px #aaa; }
+    h2 { color: #2c3e50; }
+    article { margin-bottom: 20px; }
+    .quiz { margin-top: 20px; }
+    .quiz button { margin-top: 10px; }
+    footer { margin-top: 30px; text-align: center; color: #666; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>EdukasiKu</h1>
+  <nav>
+    <a href="#artikel">Artikel</a>
+    <a href="#blog">Blog Edukatif</a>
+    <a href="#quiz">Quiz Interaktif</a>
+  </nav>
+</header>
+
+<section id="artikel">
+  <h2>Artikel Teknologi Digital</h2>
+  <article>
+    <h3>Mengenal Teknologi 5G</h3>
+    <p>Teknologi 5G merupakan generasi kelima dari jaringan internet seluler yang menawarkan kecepatan sangat tinggi dan latensi rendah. Dengan 5G, berbagai inovasi seperti mobil otonom dan Internet of Things (IoT) dapat berkembang pesat.</p>
+  </article>
+  <article>
+    <h3>Cloud Computing</h3>
+    <p>Cloud computing memungkinkan penyimpanan data dan aplikasi secara online, sehingga akses menjadi lebih mudah dan fleksibel tanpa harus bergantung pada perangkat keras lokal.</p>
+  </article>
+</section>
+
+<section id="blog">
+  <h2>Blog Edukatif</h2>
+  <article>
+    <h3>Tips Memulai Karir di Dunia Digital</h3>
+    <p>Mulailah dengan belajar dasar-dasar pemrograman dan teknologi digital. Gunakan platform pembelajaran online dan bergabung dengan komunitas untuk memperluas jaringan dan pengalaman.</p>
+  </article>
+  <article>
+    <h3>Pentingnya Literasi Digital</h3>
+    <p>Literasi digital adalah kemampuan untuk memahami dan menggunakan teknologi secara kritis dan efektif. Hal ini sangat penting di era informasi saat ini untuk menghindari hoaks dan penyalahgunaan data.</p>
+  </article>
+</section>
+
+<section id="quiz" class="quiz">
+  <h2>Quiz Interaktif</h2>
+  <p>Berapa generasi teknologi jaringan seluler yang ada sampai saat ini?</p>
+  <input type="radio" id="opt1" name="quiz" value="3" />
+  <label for="opt1">3</label><br />
+  <input type="radio" id="opt2" name="quiz" value="4" />
+  <label for="opt2">4</label><br />
+  <input type="radio" id="opt3" name="quiz" value="5" />
+  <label for="opt3">5</label><br />
+  <input type="radio" id="opt4" name="quiz" value="6" />
+  <label for="opt4">6</label><br />
+  <button onclick="checkQuiz()">Submit</button>
+  <p id="quiz-result"></p>
+</section>
+
+<footer>
+  &copy; 2025 Edukasiku. All rights reserved.
+</footer>
+
+<script>
+  function checkQuiz() {
+    const options = document.getElementsByName('quiz');
+    let selected = null;
+    for (const opt of options) {
+      if (opt.checked) selected = opt.value;
+    }
+    const result = document.getElementById('quiz-result');
+    if (selected === null) {
+      result.textContent = 'Silakan pilih jawaban terlebih dahulu!';
+      result.style.color = 'red';
+    } else if (selected === '5') {
+      result.textContent = 'Benar! Teknologi jaringan seluler sudah sampai generasi ke-5.';
+      result.style.color = 'green';
+    } else {
+      result.textContent = 'Salah, coba lagi ya.';
+      result.style.color = 'red';
+    }
+  }
+</script>
+
+</body>
+</html>
